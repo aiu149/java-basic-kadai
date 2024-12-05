@@ -27,20 +27,9 @@ public class Car_Chapter15 {
 		System.out.println();
 	}
 	
-
 	public void run() {
-		if( this.speed == 10 ) {
+		if( this.speed != 0 ) {
 			System.out.print("速度は時速"+ this.speed +"kmです");
-		} else if( this.speed == 20 ) {
-			System.out.print("速度は時速"+ this.speed +"kmです");
-		} else if( this.speed == 30 ) {
-			System.out.print("速度は時速"+ this.speed +"kmです");
-		} else if( this.speed == 40 ){
-			System.out.print("速度は時速"+ this.speed +"kmです");
-		} else if( this.speed == 50 ){
-			System.out.print("速度は時速"+ this.speed +"kmです");
-		} else {
-			System.out.print("速度は時速"+ 10 +"kmです");
 		}
 
 	}
