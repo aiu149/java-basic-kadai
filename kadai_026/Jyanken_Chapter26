@@ -1,0 +1,47 @@
+package kadai_026;
+
+import java.util.Scanner;
+
+public class Jyanken_Chapter26 {
+	public String getMyChoice() {
+		Scanner scanner = new Scanner(System.in);
+		System.out.println("自分のじゃんけんの手を入力しましょう");
+		System.out.println("グーはrockのrを入力しましょう");
+		System.out.println("チョキはscissorsのsを入力しましょう");
+		System.out.println("パーはpaperのpを入力しましょう");
+		String choice = scanner.nextLine();
+		return choice;
+	}
+
+	public String getRandom() {
+		double randomValue = Math.random() * 3;
+		int randomChoice = (int) Math.floor(randomValue);
+		String[] hands = { "r", "s", "p" };
+		return hands[randomChoice];
+	}
+
+	public void playGame() {
+		// getMyChoiceとgetRandomの結果を取得
+		String myChoice = getMyChoice();
+		String opponentChoice = getRandom();
+
+		// じゃんけんの手を出力する
+		java.util.Map<String, String> handsMap = new java.util.HashMap<>();
+		handsMap.put("r", "グー");
+		handsMap.put("s", "チョキ");
+		handsMap.put("p", "パー");
+
+		System.out.println("自分の手は" + handsMap.get(myChoice) + ",対戦相手の手は" + handsMap.get(opponentChoice));
+
+		// 勝敗判定
+		if (myChoice.equals(opponentChoice)) {
+			System.out.println("あいこです");
+		} else if ((myChoice.equals("r") && opponentChoice.equals("s")) ||
+				(myChoice.equals("s") && opponentChoice.equals("p")) ||
+				(myChoice.equals("p") && opponentChoice.equals("r"))) {
+			System.out.println("自分の勝ちです");
+		} else {
+			System.out.println("自分の負けです");
+		}
+	}
+}
