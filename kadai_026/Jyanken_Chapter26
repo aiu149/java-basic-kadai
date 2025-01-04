@@ -3,13 +3,27 @@ package kadai_026;
 import java.util.Scanner;
 
 public class Jyanken_Chapter26 {
+	Scanner scanner = new Scanner(System.in);
+
+	// 自分のじゃんけんの手を入力するメソッド
 	public String getMyChoice() {
-		Scanner scanner = new Scanner(System.in);
-		System.out.println("自分のじゃんけんの手を入力しましょう");
-		System.out.println("グーはrockのrを入力しましょう");
-		System.out.println("チョキはscissorsのsを入力しましょう");
-		System.out.println("パーはpaperのpを入力しましょう");
-		String choice = scanner.nextLine();
+		String choice = "";
+		boolean isValid = false;
+
+		while (!isValid) {
+			System.out.println("自分のじゃんけんの手を入力しましょう");
+			System.out.println("グーはrockのrを入力しましょう");
+			System.out.println("チョキはscissorsのsを入力しましょう");
+			System.out.println("パーはpaperのpを入力しましょう");
+
+			choice = scanner.nextLine();
+			if (choice.equals("r") || choice.equals("s") || choice.equals("p")) {
+				isValid = true;
+			} else {
+				System.out.println("正しい入力をしてください (r, s, p のいずれか)");
+			}
+		}
+
 		return choice;
 	}
 
